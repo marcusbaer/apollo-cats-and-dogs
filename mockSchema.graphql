@@ -1,0 +1,41 @@
+interface Pet {
+    id: ID!
+    name: String!
+    age: Int
+}
+
+type Cat implements Pet {
+    id: ID!
+    name: String!
+    age: Int
+    mice: Int
+}
+
+type Dog implements Pet {
+    id: ID!
+    name: String!
+    age: Int
+    bones: Int
+}
+
+"""
+`Somebody` is a person with a name, that can have `friends` and `pets`.
+Depending on his first friend and the pets of the friend, a favourite pet
+could be delivered (as a specific resolver) by a pet's name override,
+like `Somebody Else's cat`. If the friend has a dog, it works as well.
+"""
+type Somebody {
+    name: String!
+    pets: [Pet]
+    friends: [Somebody]
+    favoritePet: Cat
+}
+
+type Query {
+    cat(id: ID!): Cat
+    cats: [Cat]!
+    dog(id: ID!): Dog
+    dogs: [Dog]!
+    pets: [Pet]!
+    somebody: Somebody!
+}

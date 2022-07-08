@@ -1,0 +1,17 @@
+{
+  "name": "learning-apolloserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^3.9.0",
+    "graphql": "^16.5.0"
+  }
+}
